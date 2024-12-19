@@ -1,5 +1,4 @@
-import React from 'react';
-
-export const ExampleComponent = ({ message }: { message: string }) => {
-  return <div>{message}</div>;
-};
+export * from './components/ProtectedComponent';
+export { PermissionProvider } from './contexts/PermissionContext';
+export * from './hooks/usePermissions';
+export { hasRequiredPermissions } from './utils/permissionsUtil';
