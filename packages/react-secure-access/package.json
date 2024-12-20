@@ -1,0 +1,28 @@
+{
+    "name": "react-secure-access",
+    "version": "1.0.0",
+    "main": "index.js",
+    "module": "index.js",
+    "types": "index.d.ts",
+    "files": [
+      "dist",
+      "*.js",
+      "*.d.ts"
+    ],
+    "exports": {
+      ".": "./dist/index.js",
+      "./components/*": "./dist/components/*.js",
+      "./hooks/*": "./dist/hooks/*.js",
+      "./utils/*": "./dist/utils/*.js"
+    },
+    "scripts": {
+      "build": "tsc",
+      "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,md}'",
+      "lint": "eslint 'src/**/*.{ts,tsx}'"
+    },
+    "peerDependencies": {
+      "react": "^18.3.1",
+      "react-dom": "^18.3.1"
+    }
+  }
+  
