@@ -1,14 +1,19 @@
 {
   "name": "react-secure-access",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "*.js",
+    "*.d.ts"
   ],
-  "directories": {
-    "src": "src"
+  "exports": {
+    ".": "./dist/index.js",
+    "./components/*": "./dist/components/*.js",
+    "./hooks/*": "./dist/hooks/*.js",
+    "./utils/*": "./dist/utils/*.js"
   },
   "scripts": {
     "build": "tsc",
@@ -20,7 +25,7 @@
     "access",
     "permissions"
   ],
-  "author": "",
+  "author": "Mia Hossain",
   "license": "ISC",
   "description": "A React library for managing access and permissions",
   "devDependencies": {

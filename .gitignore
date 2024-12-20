@@ -11,7 +11,7 @@ pnpm-debug.log*
 
 # Build output
 dist/
-react-access-tool-1.0.0.tgz
+react-secure-access-1.0.0.tgz
 
 # TypeScript
 *.tsbuildinfo
