@@ -6,7 +6,7 @@ const useContextPermissions = () => {
 
     if (!context) {
         throw new Error(
-            'usePermissions must be used within PermissionProvider',
+            'usePermissions must be used within PermissionProvider'
         );
     }
     const { isAuthenticated, userPermissions, updateUserPermissions } = context;

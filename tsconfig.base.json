@@ -1,20 +1,29 @@
 {
-  "compilerOptions": {
-    "target": "ES2016",
-    "module": "CommonJS",
-    "declaration": true,
-    "strict": true,
-    "jsx": "react",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "Node",
-    "baseUrl": ".",
-    "paths": {
-      "react-secure-access/*": ["packages/react-secure-access/src/*"],
-      "react-secure-permission/*": ["packages/react-secure-permission/src/*"],
-      "react-secure-auth/*": ["packages/react-secure-auth/src/*"]
-    }
-  },
-  "exclude": ["node_modules", "dist", "examples", "docs"]
+    "compilerOptions": {
+        "target": "es2021",
+        "module": "esnext",
+        "lib": ["dom", "es2016"],
+        "jsx": "react-jsx",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "declaration": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noImplicitAny": true,
+        "noEmit": true,
+        "baseUrl": ".",
+        "paths": {
+            "react-secure-access/*": ["packages/react-secure-access/src/*"],
+            "react-secure-permission/*": [
+                "packages/react-secure-permission/src/*"
+            ],
+            "react-secure-auth/*": ["packages/react-secure-auth/src/*"]
+        }
+    },
+    "include": ["packages/*/src/**/*"],
+    "exclude": ["node_modules", "dist"]
 }

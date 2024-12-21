@@ -10,7 +10,7 @@ export const ProtectedComponent: React.FC<{
     const userPermissions = useUserPermissions();
     const isAllowed = hasRequiredPermissions(
         requiredPermissions,
-        userPermissions,
+        userPermissions
     );
 
     return isAllowed ? <>{children}</> : <>{fallback}</>;

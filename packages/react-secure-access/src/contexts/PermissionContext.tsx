@@ -18,7 +18,7 @@ const PermissionProvider: React.FC<{ children: ReactNode }> = ({
     const [userPermissions, setUserPermissions] =
         useState<string[]>(localPermissions);
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
-        localPermissions && localPermissions.length > 0,
+        localPermissions && localPermissions.length > 0
     );
 
     const updateUserPermissions = (newPermissions: string[]) => {
