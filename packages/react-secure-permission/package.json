@@ -1,0 +1,23 @@
+{
+    "name": "react-secure-permission",
+    "version": "1.0.0",
+    "main": "index.js",
+    "module": "index.js",
+    "types": "index.d.ts",
+    "files": [
+        "dist",
+        "*.js",
+        "*.d.ts"
+    ],
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint 'src/**/*.{ts,tsx}'"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    }
+}

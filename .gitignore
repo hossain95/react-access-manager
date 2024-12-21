@@ -11,7 +11,10 @@ pnpm-debug.log*
 
 # Build output
 dist/
-react-secure-access-1.0.0.tgz
+react-secure-access-*.tgz
+react-secure-auth-*.tgz
+react-secure-permission-*.tgz
+
 
 # TypeScript
 *.tsbuildinfo
