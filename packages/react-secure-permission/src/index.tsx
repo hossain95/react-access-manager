@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
-export const AuthComponent: React.FC<{ children: ReactNode }> = ({
-    children,
+export const PermissionComponent:React.FC<{ children: ReactNode }> = ({
+    children
 }) => {
     return (
         <div>

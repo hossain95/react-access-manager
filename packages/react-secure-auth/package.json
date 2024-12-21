@@ -1,17 +1,24 @@
 {
     "name": "react-secure-auth",
     "version": "1.0.0",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "files": ["dist"],
+    "main": "index.js",
+    "module": "index.js",
+    "types": "index.d.ts",
+    "files": [
+        "dist",
+        "*.js",
+        "*.d.ts"
+    ],
+    "exports": {
+        ".": "./dist/index.js"
+    },
     "scripts": {
-      "build": "tsc",
-      "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,md}'",
-      "lint": "eslint 'src/**/*.{ts,tsx}'"
+        "build": "tsc",
+        "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,md}'",
+        "lint": "eslint 'src/**/*.{ts,tsx}'"
     },
     "peerDependencies": {
-      "react": "^18.3.1",
-      "react-dom": "^18.3.1"
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
     }
-  }
-  
+}
