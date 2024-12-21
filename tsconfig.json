@@ -24,6 +24,6 @@
             "react-secure-auth/*": ["packages/react-secure-auth/src/*"]
         }
     },
-    "include": ["packages/*/src/**/*"],
+    "include": ["packages/*/src/**/*", "scripts/*.js"],
     "exclude": ["node_modules", "dist"]
 }

@@ -7,7 +7,7 @@
     "scripts": {
         "prepare": "husky install",
         "build": "lerna run build",
-        "format": "lerna exec -- prettier --write 'src/**/*.{ts,tsx}'",
+        "format": "lerna exec -- prettier --write 'src/**/*.{ts,tsx} ../../scripts/*.js'",
         "lint": "lerna exec -- eslint 'src/**/*.{ts,tsx}'",
         "test": "echo \"Error: no test specified\" && exit 1",
         "clean": "node ./scripts/cleanup_all.js",
@@ -20,10 +20,9 @@
         "packages/*"
     ],
     "devDependencies": {
+        "@eslint/js": "^9.17.0",
         "@types/react": "^18.3.17",
         "@types/react-dom": "^18.3.5",
-        "@typescript-eslint/eslint-plugin": "^8.18.1",
-        "@typescript-eslint/parser": "^8.18.1",
         "eslint": "^9.17.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.2.1",
@@ -31,13 +30,21 @@
         "eslint-plugin-react-hooks": "^5.1.0",
         "husky": "^8.0.0",
         "lerna": "^8.1.9",
+        "globals": "^15.14.0",
         "lint-staged": "^15.2.11",
         "prettier": "^3.4.2",
-        "typescript": "^5.7.2"
+        "typescript": "^5.7.2",
+        "typescript-eslint": "^8.18.1"
+    },
+    "engines": {
+        "node": ">=16"
     },
     "lint-staged": {
         "packages/*/src/**/*.{ts,tsx}": [
             "eslint --max-warnings=0",
+            "prettier --write"
+        ],
+        "script/*.js": [
             "prettier --write"
         ],
         "*.json": [

@@ -6,11 +6,11 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const packagesDir = path.resolve(__dirname, "../packages");
+const packagesDir = path.resolve(__dirname, '../packages');
 
 fs.readdirSync(packagesDir).forEach((pkg) => {
     const packagePath = path.join(packagesDir, pkg);
-    const distPath = path.join(packagePath, "dist");
+    const distPath = path.join(packagePath, 'dist');
 
     if (fs.existsSync(distPath)) {
         fs.rmSync(distPath, { recursive: true, force: true });
