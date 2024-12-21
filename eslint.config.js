@@ -39,7 +39,7 @@ export default [
             prettier: pluginPrettier,
             prettierConfig: pluginPrettierConfig,
             react: pluginReact.configs.recommended,
-            'react-hooks': pluginReactHooks.configs.recommended
+            'react-hooks': pluginReactHooks.configs.recommended,
         },
         settings: {
             react: {
@@ -50,8 +50,6 @@ export default [
             semi: ["warn"],
             "@typescript-eslint/no-unused-vars": ["warn", {"ignoreRestSiblings": true}],
             "@typescript-eslint/interface-name-prefix": "off",
-            "react-hooks/rules-of-hooks": "error",
-            "react-hooks/exhaustive-deps": "warn",
         },
         ignores: []
     },

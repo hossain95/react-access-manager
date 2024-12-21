@@ -5,6 +5,7 @@ const hasRequiredPermissions = (
     if (!requiredPermissions || !userPermissions) {
         return false;
     }
+
     return requiredPermissions.some((permission) =>
         userPermissions.includes(permission)
     );

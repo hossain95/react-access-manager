@@ -47,6 +47,9 @@
         "script/*.js": [
             "prettier --write"
         ],
+        "eslint.config.js": [
+            "eslint --max-warnings=0"
+        ],
         "*.json": [
             "prettier --write"
         ],
