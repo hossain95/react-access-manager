@@ -50,6 +50,8 @@ export default [
             semi: ["warn"],
             "@typescript-eslint/no-unused-vars": ["warn", {"ignoreRestSiblings": true}],
             "@typescript-eslint/interface-name-prefix": "off",
+            "react-hooks/rules-of-hooks": "error",
+            "react-hooks/exhaustive-deps": "warn",
         },
         ignores: []
     },
