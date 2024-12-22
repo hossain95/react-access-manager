@@ -1,2 +1,2 @@
-export { PermissionProvider } from './contexts/PermissionContext';
+export { PermissionProvider } from './contexts/PermissionProvider';
 export * from './types/type';

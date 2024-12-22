@@ -34,4 +34,4 @@ const PermissionProvider: React.FC<{ children: ReactNode }> = ({
     );
 };
 
-export default PermissionProvider;
+export { PermissionProvider };

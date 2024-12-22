@@ -4,14 +4,16 @@ import { useSessionPermissions } from '../hooks/useSessionPermissions';
 
 export const ProtectedComponent: React.FC<{
     requiredPermissions: string[];
-    fallback?: ReactNode | null;
+    allMatch?: boolean;
+    fallback?: ReactNode;
     children: ReactNode;
-}> = ({ requiredPermissions, fallback, children }) => {
+}> = ({ requiredPermissions, allMatch = false, fallback = null, children }) => {
     const sessionPermissions = useSessionPermissions();
-    const isAllowed = hasRequiredPermissions(
+    const isAllowed = hasRequiredPermissions({
         requiredPermissions,
-        sessionPermissions
-    );
+        sessionPermissions,
+        allMatch,
+    });
 
-    return isAllowed ? <>{children}</> : <>{fallback}</>;
+    return isAllowed ? children : fallback;
 };
