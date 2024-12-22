@@ -14,7 +14,6 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noImplicitAny": true,
-        "noEmit": true,
         "baseUrl": ".",
         "paths": {
             "react-secure-access/*": ["packages/react-secure-access/src/*"],
