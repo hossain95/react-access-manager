@@ -1,5 +1,4 @@
-export interface PermissionType {
-    hasSessionPermissions: boolean;
+export interface SessionPermissionType {
     sessionPermissions: string[];
-    addSessionPermissions: (permissions: string[]) => void;
+    addSessionPermissions: (sessionPermissions: string[]) => void;
 }

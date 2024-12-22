@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { hasRequiredPermissions } from '../utils/permissionsUtil';
-import { useSessionPermissions } from 'react-secure-permission/hooks/usePermissions';
+import { hasRequiredPermissions } from '../utils/permissionUtil';
+import { useSessionPermissions } from '../hooks/useSessionPermissions';
 
 export const ProtectedComponent: React.FC<{
     requiredPermissions: string[];
