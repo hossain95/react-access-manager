@@ -14,7 +14,7 @@ fs.readdirSync(packagesDir).forEach((pkg) => {
     const nodeModulesPath = path.join(packagePath, 'node_modules');
 
     if (fs.existsSync(distPath)) {
-        fs.rmSync(distPath, { recursive: true, force: true })
+        fs.rmSync(distPath, { recursive: true, force: true });
         console.log(`Removed dist from ${pkg}`);
     } else {
         console.log(`No dist folder found in ${pkg}`);

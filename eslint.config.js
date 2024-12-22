@@ -1,22 +1,18 @@
-import globals from 'globals'
-import pluginJs from '@eslint/js';
+import globals from 'globals';
+import jsPlugin from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import pluginReact from 'eslint-plugin-react';
-import pluginReactHooks from 'eslint-plugin-react-hooks';
-import pluginPrettier from 'eslint-plugin-prettier';
-import pluginPrettierConfig from 'eslint-config-prettier';
+import reactPlugin from 'eslint-plugin-react';
+import reactHookPlugin from 'eslint-plugin-react-hooks';
+import prettierRecommendedPlugin from 'eslint-plugin-prettier/recommended';
+import prettierConfig from 'eslint-config-prettier';
 
-import path from 'path';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 export default [
-    pluginJs.configs.recommended,
+    jsPlugin.configs.recommended,
     ...tseslint.configs.recommended,
-
+    reactPlugin.configs.flat.recommended,
+    prettierRecommendedPlugin,
     {
         files: ["packages/*/src/**/*.{ts,tsx}", "scripts/*.js"],
         languageOptions: {
@@ -24,7 +20,6 @@ export default [
             parserOptions: {
                 ecmaVersion: 2021,
                 sourceType: 'module',
-                project: path.resolve(__dirname, 'tsconfig.json'),
                 ecmaFeatures: {
                     jsx: true,
                 },
@@ -32,25 +27,26 @@ export default [
             globals: {
                 ...globals.browser,
                 ...globals.node,
-                ...globals.es2021
+                ...globals.es2021,
             },
-        },
-        plugins: {
-            prettier: pluginPrettier,
-            prettierConfig: pluginPrettierConfig,
-            react: pluginReact.configs.recommended,
-            'react-hooks': pluginReactHooks.configs.recommended,
         },
         settings: {
             react: {
                 version: 'detect',
             },
+        }
+    },
+    {
+        plugins: {
+            prettierConfig: prettierConfig,
+            'react-hooks': reactHookPlugin,
         },
+        
         rules:{
             semi: ["warn"],
             "@typescript-eslint/no-unused-vars": ["warn", {"ignoreRestSiblings": true}],
             "@typescript-eslint/interface-name-prefix": "off",
+            ...reactHookPlugin.configs.recommended.rules,
         },
-        ignores: []
     },
 ];
