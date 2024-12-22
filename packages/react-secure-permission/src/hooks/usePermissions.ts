@@ -9,23 +9,28 @@ const useContextPermissions = () => {
             'usePermissions must be used within PermissionProvider'
         );
     }
-    const { isAuthenticated, userPermissions, updateUserPermissions } = context;
-    return { isAuthenticated, userPermissions, updateUserPermissions };
+    const { hasSessionPermissions, sessionPermissions, addSessionPermissions } =
+        context;
+    return { hasSessionPermissions, sessionPermissions, addSessionPermissions };
 };
 
-const useIsAuthenticated = () => {
-    const { isAuthenticated } = useContextPermissions();
-    return isAuthenticated;
+const useHasSessionPermissions = () => {
+    const { hasSessionPermissions } = useContextPermissions();
+    return hasSessionPermissions;
 };
 
-const useUserPermissions = () => {
-    const { userPermissions } = useContextPermissions();
-    return userPermissions;
+const useSessionPermissions = () => {
+    const { sessionPermissions } = useContextPermissions();
+    return sessionPermissions;
 };
 
-const useUpdateUserPermissions = () => {
-    const { updateUserPermissions } = useContextPermissions();
-    return updateUserPermissions;
+const useAddSessionPermissions = () => {
+    const { addSessionPermissions } = useContextPermissions();
+    return addSessionPermissions;
 };
 
-export { useIsAuthenticated, useUserPermissions, useUpdateUserPermissions };
+export {
+    useHasSessionPermissions,
+    useSessionPermissions,
+    useAddSessionPermissions,
+};

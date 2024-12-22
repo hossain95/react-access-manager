@@ -1,13 +1,13 @@
 const hasRequiredPermissions = (
     requiredPermissions: string[],
-    userPermissions: string[]
+    sessionPermissions: string[]
 ) => {
-    if (!requiredPermissions || !userPermissions) {
+    if (!requiredPermissions || !sessionPermissions) {
         return false;
     }
 
     return requiredPermissions.some((permission) =>
-        userPermissions.includes(permission)
+        sessionPermissions.includes(permission)
     );
 };
 

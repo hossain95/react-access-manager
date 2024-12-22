@@ -1,37 +1,43 @@
 import React, { createContext, ReactNode, useState } from 'react';
-
-interface PermissionType {
-    isAuthenticated: boolean;
-    userPermissions: string[];
-    updateUserPermissions: (permissions: string[]) => void;
-}
+import { PermissionType } from 'react-secure-permission/types/type';
 
 const PermissionContext = createContext<PermissionType | null>(null);
 
 const PermissionProvider: React.FC<{ children: ReactNode }> = ({
     children,
 }) => {
-    const storedPermissions = localStorage.getItem('permissions');
-    const localPermissions: string[] = storedPermissions
-        ? JSON.parse(storedPermissions)
+    const retrievedSessionPermissions = localStorage.getItem(
+        'session-permissions'
+    );
+    const parsedSessionPermissions: string[] = retrievedSessionPermissions
+        ? JSON.parse(retrievedSessionPermissions)
         : [];
-    const [userPermissions, setUserPermissions] =
-        useState<string[]>(localPermissions);
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
-        localPermissions && localPermissions.length > 0
+    const [sessionPermissions, setSessionPermissions] = useState<string[]>(
+        parsedSessionPermissions
+    );
+    const [hasSessionPermissions, setHasSessionPermissions] = useState<boolean>(
+        parsedSessionPermissions && parsedSessionPermissions.length > 0
     );
 
-    const updateUserPermissions = (newPermissions: string[]) => {
-        localStorage.setItem('permissions', JSON.stringify(newPermissions));
-        setUserPermissions(newPermissions);
+    const addSessionPermissions = (newPermissions: string[]) => {
+        localStorage.setItem(
+            'session-permissions',
+            JSON.stringify(newPermissions)
+        );
+        setSessionPermissions(newPermissions);
+
         const isAuth = newPermissions.length > 0;
-        setIsAuthenticated(isAuth);
-        console.info('Permission updated successfully.');
+        setHasSessionPermissions(isAuth);
+        console.info('Session Permissions updated successfully.');
     };
 
     return (
         <PermissionContext.Provider
-            value={{ isAuthenticated, userPermissions, updateUserPermissions }}
+            value={{
+                hasSessionPermissions,
+                sessionPermissions,
+                addSessionPermissions,
+            }}
         >
             {children}
         </PermissionContext.Provider>
