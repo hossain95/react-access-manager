@@ -16,11 +16,9 @@
         "noImplicitAny": true,
         "baseUrl": ".",
         "paths": {
-            "react-secure-access/*": ["packages/react-secure-access/src/*"],
-            "react-secure-permission/*": [
-                "packages/react-secure-permission/src/*"
-            ],
-            "react-secure-auth/*": ["packages/react-secure-auth/src/*"]
+            "react-access-manager/*": ["packages/react-access-manager/src/*"],
+            "react-permission/*": ["packages/react-permission/src/*"],
+            "react-auth/*": ["packages/react-auth/src/*"]
         }
     },
     "include": ["packages/*/src/**/*", "scripts/*.js"],
