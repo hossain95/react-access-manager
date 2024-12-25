@@ -1,21 +1,21 @@
 const hasRequiredPermissions = ({
-    requiredPermissions,
+    permissions,
     sessionPermissions,
     allMatch = false,
 }: {
-    requiredPermissions: string[];
+    permissions: string[];
     sessionPermissions: string[];
     allMatch?: boolean;
 }) => {
-    if (!requiredPermissions || !sessionPermissions) {
+    if (!permissions || !sessionPermissions) {
         return false;
     }
     if (allMatch) {
-        return requiredPermissions.every((permission) =>
+        return permissions.every((permission) =>
             sessionPermissions.includes(permission)
         );
     }
-    return requiredPermissions.some((permission) =>
+    return permissions.some((permission) =>
         sessionPermissions.includes(permission)
     );
 };
