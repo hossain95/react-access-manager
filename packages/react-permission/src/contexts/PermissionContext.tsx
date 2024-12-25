@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { SessionPermissionType } from 'packages/react-permission/src/types/type';
+import { SessionPermissionType } from 'react-permission/type';
 
 const PermissionContext = createContext<SessionPermissionType | null>(null);
 
