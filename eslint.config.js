@@ -14,7 +14,7 @@ export default [
     reactPlugin.configs.flat.recommended,
     prettierRecommendedPlugin,
     {
-        files: ["packages/*/src/**/*.{ts,tsx}", "scripts/*.js"],
+        files: ["packages/*/src/**/*.{ts,tsx, test.ts}", "scripts/*.js",],
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
@@ -47,6 +47,7 @@ export default [
             "@typescript-eslint/no-unused-vars": ["warn", {"ignoreRestSiblings": true}],
             "@typescript-eslint/interface-name-prefix": "off",
             ...reactHookPlugin.configs.recommended.rules,
+            
         },
     },
 ];

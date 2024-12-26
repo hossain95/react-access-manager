@@ -9,6 +9,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+coverage/
 # Build output
 dist/
 react-access-manager-*.tgz
@@ -22,3 +23,5 @@ access-manager-react-permission-*.tgz
 # Editor directories and files
 .vscode/
 .idea/
+
+

@@ -1,9 +1,11 @@
 {
     "compilerOptions": {
-        "target": "es2021",
+        "target": "es2020",
         "module": "esnext",
-        "lib": ["dom", "es2016"],
+        "lib": ["dom", "ESNext"],
         "jsx": "react-jsx",
+        "types": ["jest", "@testing-library/jest-dom"],
+
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
@@ -21,6 +23,10 @@
             "react-auth/*": ["packages/react-auth/src/*"]
         }
     },
-    "include": ["packages/*/src/**/*", "scripts/*.js"],
+    "include": [
+        "packages/*/src/**/*",
+        "scripts/*.js",
+        "packages/react-permission/jest.setup.ts"
+    ],
     "exclude": ["node_modules", "dist"]
 }
