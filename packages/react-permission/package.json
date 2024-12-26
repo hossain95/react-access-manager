@@ -1,6 +1,7 @@
 {
     "name": "@access-manager/react-permission",
     "version": "1.0.0",
+    "type": "module",
     "main": "index.js",
     "module": "index.js",
     "types": "index.d.ts",
@@ -18,11 +19,13 @@
     },
     "scripts": {
         "build": "tsc",
+        "test": "jest --config jest.config.js",
         "lint": "eslint 'src/**/*.{ts,tsx}'"
     },
     "peerDependencies": {
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-router": "^7.1.0"
+        "react": ">=18.3.1 || ^19.x",
+        "react-dom": ">=18.3.1 || ^19.x",
+        "react-router": "^7.1.0",
+        "react-router-dom": "^7.1.1"
     }
 }

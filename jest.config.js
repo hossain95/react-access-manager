@@ -1,0 +1,9 @@
+export default {
+    preset: 'ts-jest',
+    testEnvironment: 'jsdom',
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+    verbose: true,
+    collectCoverage: true,
+    coverageReporters: ['clover', 'lcov', 'html'],
+  };
+  
